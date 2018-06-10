@@ -5,8 +5,9 @@ style = imread('style/style6.jpg');
 content = imread('content/content6.jpg');
 
 %% 2. Adjust the size of the style image to 100x100
-[idx, idy] = findColorBlock(style);
-block_style = style(idx : idx + 99, idy: idy + 99, :);
+scaledStyle = scalingImage(style);
+[idx, idy] = findColorBlock(scaledStyle);
+block_style = scaledStyle(idx : idx + 99, idy: idy + 99, :);
 
 %% 3. Adjust the distribution of color of the content image to that of the style image
 new_content = cf_reinhard(content, block_style);
