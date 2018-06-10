@@ -1,8 +1,8 @@
 close all; clear all; clc;
 
 %% 1. Read content and style images
-style = imread('style/style7.jpg');
-content = imread('content/content2.jpg');
+style = imread('image/20.jpg');
+content = imread('image/7.jpg');
 
 %% 2. Adjust the size of the style image to 100x100
 scaledStyle = scalingImage(style);
