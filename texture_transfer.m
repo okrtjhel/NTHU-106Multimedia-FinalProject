@@ -10,8 +10,8 @@ function [imOut] = texture_transfer(target, sample, outSize1, outSize2, patchSiz
     %%Random x, y value for the first patch
     maxX = inSize(1)-patchSize;
     maxY = inSize(2)-patchSize;
-    ssX = 1;
-    ssY = 1;
+    ssX = int8(1 + rand * (maxX -1));
+    ssY = int8(1 + rand * (maxY -1));
     endX = ssX+ patchSize-1;
     endY = ssY+ patchSize-1;
     lenX = endX - ssX +1;
